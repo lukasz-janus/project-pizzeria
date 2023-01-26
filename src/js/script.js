@@ -70,7 +70,7 @@
   const settings = {
     amountWidget: {
       defaultValue: 1,
-      defaultMin: 1,
+      defaultMin: 0,
       defaultMax: 10,
 
     }, // CODE CHANGED
