@@ -407,7 +407,7 @@
         thisCart.update();
       });
 
-      thisCart.dom.productList.addEventListener('remove', function(){
+      thisCart.dom.productList.addEventListener('remove', function(event){
         thisCart.remove(event.detail.cartProduct);
       });
     }
@@ -463,9 +463,19 @@
       console.log('totalNumber:', thisCart.totalNumber , 'subtotalPrice:', thisCart.subtotalPrice , 'totalPrice:', thisCart.totalPrice);
     }
 
-    remove(){
+    remove(event){
       const thisCart = this;
 
+      const productArrayLength = thisCart.products.length;
+      console.log('productArrayLength', productArrayLength);
+
+      const removeCartProduct = thisCart.products.indexOf(event);
+      thisCart.products.splice(removeCartProduct, 0);
+
+      console.log('removeCartProduct', removeCartProduct);
+      console.log('productArrayLength', productArrayLength);
+
+      thisCart.update();
     }
   }
 
@@ -521,7 +531,7 @@
         },
       });
       thisCartProduct.dom.wrapper.dispatchEvent(event);
-      console.log('Function Remove is ON')
+      console.log('Function Remove is ON');
     }
 
     initActions(){
