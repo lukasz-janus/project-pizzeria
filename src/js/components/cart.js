@@ -117,9 +117,9 @@ class Cart{
     const removeCartProduct = thisCart.products.indexOf(event);
     thisCart.products.splice(removeCartProduct, 1);
       
-    console.log('removeCartProduct', removeCartProduct);
-    console.log('productArrayLength', productArrayLength);
-    console.log('address es:', thisCart.payload.address);
+    // console.log('removeCartProduct', removeCartProduct);
+    // console.log('productArrayLength', productArrayLength);
+    // console.log('address es:', thisCart.payload.address);
 
     event.dom.wrapper.remove();
 
