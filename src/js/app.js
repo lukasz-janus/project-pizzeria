@@ -1,4 +1,4 @@
-import { settings, select } from './settings.js';
+import { settings, select, classNames } from './settings.js';
 import Product from './components/product.js';
 import Cart from './components/cart.js';
 import Booking from './components/booking.js';
@@ -11,11 +11,11 @@ const app = {
 
     const idFromHash = window.location.hash.replace('#/', '');
 
-    let pageMatchingHash = thisApp.pages[0].id;
+    thisApp.pageMatchingHash = thisApp.pages[0].id;
 
     for(let page of thisApp.pages){
       if(page.id == idFromHash){
-        pageMatchingHash = page.id;
+        thisApp.pageMatchingHash = page.id;
         break;
       }
     }
